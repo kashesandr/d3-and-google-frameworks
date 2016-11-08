@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:kashesandr/d3-and-google-frameworks.git"
+    "url": "git@github.com:kashesandr/d3-and-polymer.git"
   },
   "keywords": [
     "d3",
