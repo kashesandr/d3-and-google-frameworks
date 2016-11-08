@@ -1,0 +1,33 @@
+{
+  "name": "d3-and-polymer",
+  "version": "1.0.0",
+  "description": "How to use d3.js with google polymer?",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "test",
+    "serve": "node ./node_modules/.bin/polymer serve --port 8181"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kashesandr/d3-and-google-frameworks.git"
+  },
+  "keywords": [
+    "d3",
+    "d3.js",
+    "google",
+    "polymer",
+    "charts",
+    "svg"
+  ],
+  "author": "Alexander Kasheverov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kashesandr/d3-and-polymer/issues"
+  },
+  "homepage": "https://github.com/kashesandr/d3-and-polymer",
+  "dependencies": {
+    "d3": "^4.3.0",
+    "polymer-cli": "^0.17.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "polymer",
+  "short_name": "polymer",
+  "description": "d3js + polymer",
+  "start_url": "/",
+  "display": "standalone"
+}
