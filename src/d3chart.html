@@ -1,0 +1,59 @@
+<link rel="import" href="../node_modules/@polymer/polymer/polymer.html">
+
+<dom-module id="d3-chart">
+
+    <script>
+
+        Polymer({
+
+            is: 'd3-chart',
+
+            properties: {
+
+                chartModel: {
+                    type: Object,
+                    value: KashMatrix // will be invoked automatically
+                },
+                data:       { type: Array,  value: [] },
+                options:    { type: Object, value: {} },
+                svgElement: { type: Object, value: null }
+            },
+
+            observers: [
+                'dataUpdated(data.*)',
+                'optionsUpdated(options.*)'
+            ],
+
+            dataUpdated: function (obj) {
+                var data = obj.base;
+                if (!data.length || !this.svgElement) return;
+                this.svgElement.datum(data);
+                this.render();
+            },
+
+            optionsUpdated: function (obj) {
+                var options = obj.base;
+                if (!options || !this.chartModel) return;
+                for (var key in options)
+                    if (options.hasOwnProperty(key))
+                        this.chartModel[key](options[key]);
+                this.render();
+            },
+
+            ready: function () {
+                var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                this.svgElement = d3.select(svg);
+                Polymer.dom(this.root).appendChild(svg);
+                this.render();
+            },
+
+            render: function () {
+                if (!this.svgElement || !this.chartModel) return;
+                this.svgElement.call(this.chartModel); // render the chart
+            }
+
+        });
+
+    </script>
+
+</dom-module>

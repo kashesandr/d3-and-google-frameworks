@@ -1,0 +1,41 @@
+<link rel="import" href="../node_modules/@polymer/polymer/polymer.html">
+<link rel="import" href="./d3chart.html">
+<link rel="import" href="./data-service.html">
+
+<dom-module id="polymer-app">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                width: 400px;
+                margin: auto;
+            }
+        </style>
+        <data-service id="dataService"></data-service>
+        <d3-chart data="[[matrix.data]]" options="[[matrix.options]]" id="d3chart"></d3-chart>
+    </template>
+
+    <script>
+        Polymer({
+
+            is: 'polymer-app',
+
+            properties: {
+                matrix: { type: Object, value: {} }
+            },
+
+            ready: function () {
+
+                this.$.dataService.loadData().then(function(data) {
+                    this.set('matrix.data', data);
+                }.bind(this));
+
+                var options = { width: 400, height: 400 };
+                this.set('matrix.options', options);
+            }
+
+        });
+    </script>
+
+</dom-module>

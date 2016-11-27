@@ -27,7 +27,8 @@
   "dependencies": {
     "@polymer/polymer": "^1.2.5-npm-test.2",
     "d3": "^4.3.0",
-    "kash-matrix": "git://github.com/kashesandr/kash-matrix.git#v1.0.1",
+    "kash-matrix": "git://github.com/kashesandr/kash-matrix.git#v2.0.0",
+    "promise-polyfill": "^6.0.2",
     "webcomponents.js": "^0.7.23"
   },
   "devDependencies": {
