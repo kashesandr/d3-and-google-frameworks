@@ -4,9 +4,7 @@
   "description": "How to use d3.js with google polymer?",
   "main": "index.js",
   "scripts": {
-    "postinstall": "bower install",
-    "test": "test",
-    "start": "node ./node_modules/.bin/polymer serve --port 8181"
+    "start": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -27,7 +25,12 @@
   },
   "homepage": "https://github.com/kashesandr/d3-and-polymer",
   "dependencies": {
+    "@polymer/polymer": "^1.2.5-npm-test.2",
     "d3": "^4.3.0",
-    "polymer-cli": "^0.17.0"
+    "kash-matrix": "git://github.com/kashesandr/kash-matrix.git#v1.0.1",
+    "webcomponents.js": "^0.7.23"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.2"
   }
 }

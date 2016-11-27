@@ -1,0 +1,60 @@
+<link rel="import" href="../../node_modules/@polymer/polymer/polymer.html">
+
+<dom-module id="d3-chart">
+
+  <template>
+    <style>
+      :host { display: block; }
+    </style>
+  </template>
+
+
+  <script>
+    Polymer({
+
+      is: 'd3-chart',
+
+      properties: {
+
+        chartModel: {
+          type: Object,
+          value: function () {
+              return window.KashMatrix();
+          }
+        },
+        data: {
+          type: Array,
+          value: []
+        },
+        options: {
+          type: Object,
+          value: {}
+        }
+
+      },
+
+      ready: function () {
+
+          // todo: use a service for providing data
+          this.data = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+          this.options = {
+              width: 400,
+              height: 400
+          };
+
+          for (var key in this.options) {
+              if (this.options.hasOwnProperty(key)) {
+                  var val = this.options[key];
+                  this.chartModel[key](val);
+              }
+          }
+
+          var svg = d3.select(this).append("svg")
+
+          svg.datum(this.data).call(this.chartModel);
+      }
+
+    });
+  </script>
+
+</dom-module>
