@@ -1,5 +1,3 @@
 # Setup
-run `npm install`
-
-# Run
-`npm start`
+make sure version of node >= 4
+setup and run `npm start`
